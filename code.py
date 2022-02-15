@@ -30,8 +30,11 @@ class HTTPRequest:
         for chunk in chunks:
             for word in chunk.split(" "):
                 if word.lower() in self.worddict:
-                    self.worddict[word.lower()]["count"] +=  1    def __countwords(self):
-        self.wl = ''        for w in self.worddict:
+                    self.worddict[word.lower()]["count"] +=  1    
+		
+    def __countwords(self):
+        self.wl = ''        
+	for w in self.worddict:
             k = self.worddict[w]["word"]
             v = self.worddict[w]["count"]
             self.wl += f'{​k}​: {​v}​\n'if __name__ == '__main__':
